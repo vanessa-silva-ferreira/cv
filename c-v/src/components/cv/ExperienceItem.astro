@@ -1,0 +1,137 @@
+---
+import type { Experience } from "./cv";
+import { formatDate, differenceInYears, formatDistance, differenceInMonths, formatDuration, Duration } from "date-fns";
+
+// src/components/ExperienceItem.astro
+interface Props {
+    experience: Experience;
+    type: 'academic' | 'professional'
+}
+
+const { experience, type } = Astro.props;
+
+const dateToString = (date: Date) => {
+    return formatDate(date, "LLL yyyy");
+};
+
+const firstSubExperience = experience.details[experience.details.length - 1]
+const lastSubExperience = experience.details[0]
+
+const startDate = firstSubExperience.begin;
+const endDate = lastSubExperience.end;
+
+const inYears = differenceInYears(endDate ?? Date.now(), startDate)
+const inMonths = differenceInMonths(endDate ?? Date.now(), startDate) % 12
+
+let totalExperienceInYears = ""
+if (inYears > 0) {
+    totalExperienceInYears = formatDuration({ years: inYears, months: inMonths })
+} else {
+    totalExperienceInYears = formatDuration({ months: inMonths })
+}
+---
+
+{ type === 'professional' && (
+<div class="mb-6 flex">
+    <div class="flex-grow">
+        <div class="flex items-center pb-2">
+        <h3 class="text-lg font-semibold text-gray-800">
+            {experience.title}
+            {experience.postTitle && (
+                <span class="text-sm text-gray-700 font-light ml-2">{experience.postTitle}</span>
+            )}
+        </h3>
+        <span class="text-xs text-gray-500 font-light ml-2" >{totalExperienceInYears}</span>
+        </div>
+        {
+            experience.description && (
+                <p class="text-sm text-gray-500 mb-2">
+                    { experience.description.map(d => d).join(", ") }
+                </p>
+            )
+        }
+        <div class="ml-4">
+
+        {
+            experience.details.map((sub) => (
+                <div class="mb-3 last:mb-0">
+                    <h5 class="font-medium text-gray-700">{sub.role}</h5>
+
+
+                    {sub.descriptions && (
+                    <span class="text-xs text-gray-500 font-light ml-2" >{dateToString(sub.begin)} - {sub.end ? dateToString(sub.end) : "present"}</span>
+
+                        <ul class="list-disc list-outside ml-5 text-xs text-gray-600 space-y-1 pl-4">
+                            {sub.descriptions.map((detail) => (
+                                <li>
+                                    {detail.alt ? (
+                                        <abbr title={detail.alt}>
+                                            {detail.text}
+                                        </abbr>
+                                    ) : (
+                                        detail.text
+                                    )}
+                                </li>
+                            ))}
+                        </ul>
+                    )}
+                </div>
+            ))
+        }
+        </div>
+    </div>
+</div>
+)}
+
+
+
+{ type === 'academic' && (
+<div class="mb-6 flex">
+    <div class="flex-grow">
+        <div class="flex items-center pb-2">
+            <h3 class="text-lg font-semibold text-gray-800">
+                {experience.title}
+                {experience.postTitle && (
+                    <span class="text-sm text-gray-700 font-light ml-2">{experience.postTitle}</span>
+                )}
+            </h3>
+        </div>
+
+        <div class="ml-4">
+        {
+            experience.details.map((sub) => (
+                <div class="mb-3 last:mb-0">
+                    <div class="flex items-baseline">
+                        <span class="text-gray-700 font-medium">{sub.role}</span>
+                        {/* Moved outside the descriptions check so it always renders */}
+                        <span class="text-xs text-gray-500 font-light ml-2">
+                            {dateToString(sub.begin)} — {sub.end ? dateToString(sub.end) : "present"}
+                        </span>
+                    </div>
+
+                    {experience.description && (
+                         <p class="text-sm text-gray-500 mt-1">
+                            {experience.description.join(", ")}
+                         </p>
+                    )}
+
+                    {sub.descriptions && (
+                        <ul class="list-disc list-outside ml-5 text-xs text-gray-600 space-y-1 pl-4 mt-2">
+                            {sub.descriptions.map((detail) => (
+                                <li>
+                                    {detail.alt ? (
+                                        <abbr title={detail.alt}>{detail.text}</abbr>
+                                    ) : (
+                                        detail.text
+                                    )}
+                                </li>
+                            ))}
+                        </ul>
+                    )}
+                </div>
+            ))
+        }
+        </div>
+    </div>
+</div>
+)}

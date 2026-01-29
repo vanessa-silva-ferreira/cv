@@ -1,0 +1,32 @@
+---
+// src/components/SkillsList.astro
+import SectionTitle from "./SectionTitle.astro";
+import type { Skills } from "./cv";
+
+interface Props {
+    skills: Skills;
+}
+
+const { skills } = Astro.props;
+---
+
+<section>
+    <SectionTitle title="Skills" />
+    <div class="space-y-4 grid grid-cols-4">
+        {
+            Object.keys(skills).map((level) => (
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-700 mb-1">
+                        {level}
+                    </h3>
+                    {skills[level].map((skill) => (
+                        <span class="inline-flex items-center px-2 py-1 text-xs font-medium text-gray-600 ring-1 rounded-none ring-gray-500/10 ring-inset mx-2 my-1">
+                            {skill}
+                        </span>
+                    ))}
+                </div>
+            ))
+        }
+    </div>
+    <br />
+</section>

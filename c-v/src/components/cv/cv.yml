@@ -1,0 +1,124 @@
+name: Software Developer
+skills:
+  #Languages & Frameworks:
+  Languages:
+    - C
+    - C++
+    - C#
+    - CSS
+    - HTML
+    - JavaScript & TypeScript
+    - PHP
+    - Python
+    - SQL
+    - T-SQL
+  Frameworks & Libraries:
+    - .NET / .NET Framework
+    - .NET MAUI
+    - Angular
+    - Laravel
+    - Node.js
+    - React
+    - Windows Forms
+  Databases & Storage:
+    - Microsoft SQL Server
+    - MongoDB
+    - MySQL
+    - PostgreSQL
+  Tools & Technologies:
+    - Docker
+    - Linux
+#birthDate: 1997-03-15
+#lastUpdate: 2025-07-24
+#location: Porto, Portugal
+email: vanessadasilvaferreira@pm.me
+phone: "(+351) 928 143 434"
+github: https://github.com/vanessa-silva-ferreira
+professionExperience:
+  - title: Software Developer
+    description: [Banking, FinTech]
+    details:
+      - role: Montepio Credito
+        begin: 2026-01-12
+        # end: 2018-02-01
+        descriptions:
+          - text: Managing daily development tasks and bug fixes within a ticket-based system, ensuring timely delivery and clear documentation of technical solutions
+          - text: Daily management of SQL queries, including the creation and maintenance of functions and stored procedures to ensure efficient data handling
+          - text: Developing and refining C# scripts to automate processes and support core business logic
+          - text: Collaborating on performance tuning initiatives, focusing on optimizing existing code and queries for faster execution and better resource management
+  - title: Software Developer Intern
+    description: [Banking, FinTech]
+    details:
+      - role: Montepio Credito
+        begin: 2025-01-01
+        end: 2025-12-31
+        descriptions:
+          - text: Advanced T-SQL and C# Scripting
+  - title: 3D Environment Artist
+    description: [Computer Graphics, Visual Development]
+    details:
+      - role: Freelance
+        begin: 2020-10-01
+        end: 2024-06-01
+        descriptions:
+          - text: Self-learner and solution-oriented individual with a passion for solo creative endeavors complemented by collaborative team efforts. Provided coaching and mentoring to facilitate growth within the realms of art and design. Facilitated brainstorming sessions, idea sharing, planning, and assessment within team environments
+          - text: Led the conception and execution of various projects from conception to completion. Proficient in space rebuilding across diverse environments such as homes, retail spaces, and co-working areas. Demonstrated adaptability and a willingness to explore new environments, including potential ventures into the cinema and gaming industries
+          #- text: Microservices, gRPC, GraphQL, REST
+  - title: Interior Designer
+    description: [Interior Design, Architectural Visualization]
+    details:
+      - role: Marven Unipessoal Lda
+        begin: 2022-06-01
+        end: 2024-05-01
+        descriptions:
+          - text: Applied creative vision and technical expertise to design interior spaces tailored to client preferences and functional requirements
+          - text: Produced comprehensive design presentations, including mood boards, renderings, and sample boards, to effectively communicate design concepts to clients
+          - text: Collaborated closely with architects, contractors, and other professionals to ensure seamless execution of design plans and managed projects from concept development through to completion, including overseeing construction, installation, and final styling
+          #- text: Cloud-native (Google Cloud)
+          #- text: MySQL, MariaDB, Firestore, MongoDB
+          #- text: Authentication System - OAuth2 and Social Login, full backwards compatibility; audited with 0 vulnerabilities
+          #- text:  AI/NLP for sentiment analysis - got me the company's Innovation Prize
+academicExperience:
+  - title: Computer Engineering
+    description: [Universidade Aberta]
+    details:
+      - role: Bachelor's Degree
+        begin: 2025-10-06
+        descriptions:
+          - text: Developing a foundational understanding of low-level programming by building projects that utilized manual memory management (malloc, free) and pointer arithmetic. Implemented dynamic data structures, such as linked lists and arrays, with a focus on understanding memory addresses and ensuring proper resource cleanup to prevent leaks
+          - text: Designed and analyzed combinational and sequential circuits, including modules of medium complexity (multiplexers, decoders, and registers)
+          - text: Studied and implemented binary arithmetic operations and hardware-level representations
+          - text: Developed programs in P3 Assembly, gaining hands-on experience with Instruction Set Architecture, memory mapping, and CPU execution cycles
+  - title: Information Systems Technologies & Programming
+    description: [ATEC - Academia de Formação]
+    details:
+      - role: EQF 5
+        begin: 2023-11-06
+        end: 2025-03-18
+        descriptions:
+          - text: Experience with C++, JavaScript, CSS, and HTML, in developing websites, applications and designing user interfaces.
+          - text: Engaged in projects involving C# development, gained practical skills in application development and software engineering principles.
+          - text: Developed projects in C# .NET, working on backend terminal applications and Windows Forms applications.
+          - text: Knowledge of Linux and Windows Server environments, including system configuration, administration, and troubleshooting.
+          - text: Experience in SQL, with some experience in database management, query optimization, and data manipulation.
+          - text: Experience in NoSQL, namely MongoDB, used in academic projects
+          - text: Hands-on experience with PHP and Laravel, working on developing websites and utilizing the framework's MVC architecture.
+
+  - title: Interior Design - Advanced Virtual Models
+    description: [Escola Superior de Artes e Design]
+    details:
+      - role: Master's Degree (enrolled)
+        begin: 2020-09-01
+        end: 2021-06-01
+  - title: Interior Design
+    description: [Escola Superior de Artes e Design]
+    details:
+      - role: Bachelor's Degree
+        begin: 2017-09-01
+        end: 2020-06-01
+  - title: Design and Multimedia
+    description: [Universidade de Coimbra]
+    details:
+      - role: Bachelor's Degree (enrolled)
+        begin: 2016-10-01
+        end: 2017-06-01

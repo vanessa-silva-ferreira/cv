@@ -1,0 +1,61 @@
+---
+// src/pages/cv.astro (or index.astro)
+import Header from "../../components/cv/Header.astro";
+import SectionTitle from "../../components/cv/SectionTitle.astro";
+import ExperienceItem from "../../components/cv/ExperienceItem.astro";
+import SkillsList from "../../components/cv/SkillList.astro";
+import Layout from "../../layouts/Layout.astro";
+
+import { cv } from "../../components/cv/cv";
+---
+
+<Layout>
+    <div class="lg:max-w-6xl mx-auto lg:p-8 bg-white font-sans">
+        <Header cv={cv} />
+        {/* Added font-sans */}
+
+        <div class="mb-8 text-center">
+            <h2
+                class="text-lg md:text-xl font-semibold text-gray-700 tracking-wider"
+            >
+                {cv.title}
+            </h2>
+        </div>
+
+        <SkillsList skills={cv.skills} />
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
+            {/* Left Column (Experience & Education) */}
+            <div class="space-y-8">
+                <section>
+                    <SectionTitle title="Professional Experience" />
+                    {
+                        cv.professionExperience.map((e) => (
+                            <ExperienceItem
+                                experience={e}
+                                type="professional"
+                            />
+                        ))
+                    }
+                </section>
+            </div>
+
+            {/* Right Column (Skills) */}
+            <div>
+                {
+                    /* Academic Experience is moved to the left column in this layout for better balance */
+                }
+
+                <section>
+                    <SectionTitle title="Academic Experience" />
+                    {
+                        cv.academicExperience.map((e) => (
+                            <ExperienceItem experience={e} type="academic" />
+                        ))
+                    }
+                </section>
+            </div>
+        </div>
+    </div>
+    <Fragment set:html={`<!-- ${JSON.stringify(cv, null, 2)} -->`} />
+</Layout>
